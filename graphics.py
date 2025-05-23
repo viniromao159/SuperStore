@@ -54,3 +54,29 @@ plot.set_title('Top sales per Segment')
 plot.set_xlabel('Sales count')
 
 # %%
+df["Ship month-year"] = pd.to_datetime(df['Ship Date'], format='%d/%m/%Y')
+
+df["Ship month-year"] = sorted(df["Ship month-year"])
+
+df["Ship month-year"] = df["Ship month-year"].dt.strftime('%m/%Y')
+
+df["Ship month-year"].reset_index()
+
+df_data = df[["Ship month-year",'Sales']] 
+
+df_data = df_data.sort_values(by="Ship month-year")
+
+SalesMonth = df_data.groupby(by='Ship month-year', group_keys=True)[['Sales']].sum()
+
+SalesMonth
+
+# plt.figure(figsize=(10,4))
+
+# sns.lineplot(y='Sales', x='Ship month-year', data=SalesMonth)
+
+# plt.title('Sales per date')
+
+# plt.xlabel('Sales value', labelpad=15)
+
+# plt.xticks(rotation=45)
+# %%
