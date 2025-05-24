@@ -4,7 +4,7 @@ Este repositório apresenta uma **análise exploratória de dados (EDA)** utiliz
 
 A análise inclui algumas ferramentas, como:
 
-- Python -> `pandas` `numpy` `matplotlib` `seaborn`
+- Python -> `pandas` `numpy` `matplotlib` `seaborn` `Jupyter`
 - Google Sheets
 - Excel
 
