@@ -97,10 +97,22 @@ sns.despine()
 
 
 # %%
+#Bar plot - Top sales per Customer
+
 Customer_Name = (df.groupby(['Customer Name'])['Order ID'].count()).nlargest(10).reset_index()
-plot = sns.barplot(x='Order ID', y='Customer Name', data=Customer_Name)
-plot.set_title('Top sales per Customer Name')
-plot.set_xlabel('Sales count')
+
+sns.barplot(x='Order ID', y='Customer Name', data=Customer_Name, width=0.7, zorder=3)
+
+plt.title('Top sales per Customer', pad=15)
+
+plt.xlabel('Sales count', labelpad=15)
+
+plt.ylabel('Sub-Category', labelpad=15)
+
+plt.grid(axis='x', alpha=0.3, zorder=0)
+
+sns.despine()
+
 
 # %%
 Segment = (df.groupby(['Segment'])['Order ID'].count()).reset_index()
