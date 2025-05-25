@@ -79,10 +79,22 @@ plt.grid(axis='x', alpha=0.3, zorder=0)
 sns.despine()
 
 # %%
+#Bar plot - Top sales per City
+
 City = (df.groupby(['City'])['Order ID'].count()).nlargest(10).reset_index()
-plot = sns.barplot(x='Order ID', y='City', data=City)
-plot.set_title('Top sales per City')
-plot.set_xlabel('Sales count')
+
+sns.barplot(x='Order ID', y='City', data=City, width=0.7, zorder=3)
+
+plt.title('Top sales per City', pad=15)
+
+plt.xlabel('Sales count', labelpad=15)
+
+plt.ylabel('Sub-Category', labelpad=15)
+
+plt.grid(axis='x', alpha=0.3, zorder=0)
+
+sns.despine()
+
 
 # %%
 Customer_Name = (df.groupby(['Customer Name'])['Order ID'].count()).nlargest(10).reset_index()
