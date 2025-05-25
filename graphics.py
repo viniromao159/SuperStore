@@ -7,7 +7,7 @@ import matplotlib as mpl
 df = pd.read_csv("Data/SuperStore - Data.csv")
 df.head()
 
-#Sales to float
+#Columm Sales to float
 df['Sales'] = (
     df['Sales']
     .astype(str)
@@ -127,7 +127,7 @@ plot.set_xlabel('Segment', labelpad=15)
 
 plt.ylabel('Sales count', labelpad=15)
 
-plt.grid(axis='x', alpha=0.3, zorder=0)
+plt.grid(axis='y', alpha=0.3, zorder=0)
 
 sns.despine()
 
