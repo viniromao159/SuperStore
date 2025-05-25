@@ -107,7 +107,7 @@ plt.title('Top sales per Customer', pad=15)
 
 plt.xlabel('Sales count', labelpad=15)
 
-plt.ylabel('Sub-Category', labelpad=15)
+plt.ylabel('Customer', labelpad=15)
 
 plt.grid(axis='x', alpha=0.3, zorder=0)
 
@@ -116,7 +116,7 @@ sns.despine()
 
 # %%
 Segment = (df.groupby(['Segment'])['Order ID'].count()).reset_index()
-plot = sns.barplot(y='Order ID', x='Segment', data=Segment)
+plot = sns.barplot(y='Order ID', x='Segment', data=Segment, width=0.7, zorder=3)
 plot.set_title('Top sales per Segment')
 plot.set_xlabel('Sales count')
 
