@@ -132,7 +132,19 @@ plt.grid(axis='x', alpha=0.3, zorder=0)
 sns.despine()
 
 # %%
+#Bar plot - Top sales per Region
+
 region = (df.groupby(['Region'])['Order ID'].count()).reset_index()
-plot = sns.barplot(y='Order ID',x='Region', data=region)
+
+plot = sns.barplot(y='Order ID',x='Region', data=region, width=0.7, zorder=3)
+
 plot.set_title('Top sales per Region')
-plot.set_xlabel('Sales count')
+
+plot.set_xlabel('Region', labelpad=15)
+
+plt.ylabel('Sales count', labelpad=15)
+
+plt.grid(axis='y', alpha=0.3, zorder=0)
+
+sns.despine()
+# %%
